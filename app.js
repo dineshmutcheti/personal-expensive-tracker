@@ -10,7 +10,7 @@ const port = 3000;
 app.use(express.json());
 
 app.use('/transactions', transactionRoutes);
-app.use('/', categoryRoutes); // Categories are accessible without a prefix
+app.use('/', categoryRoutes); 
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
