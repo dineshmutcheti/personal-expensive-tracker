@@ -1,6 +1,6 @@
 const { getAll, getById, create, update, remove, getSummaryData } = require('../models/transactionModel');
 
-// Controller to add a new transaction
+
 const addTransaction = (req, res) => {
     const { type, category_id, amount, date, description } = req.body;
     create({ type, category_id, amount, date, description }, (err, result) => {
@@ -9,7 +9,7 @@ const addTransaction = (req, res) => {
     });
 };
 
-// Controller to get all transactions
+
 const getAllTransactions = (req, res) => {
     getAll((err, transactions) => {
         if (err) return res.status(500).json({ error: err.message });
@@ -17,7 +17,7 @@ const getAllTransactions = (req, res) => {
     });
 };
 
-// Controller to get a transaction by ID
+
 const getTransactionById = (req, res) => {
     const { id } = req.params;
     console.log("Transaction ID:", id); // Log the ID being passed
@@ -33,7 +33,7 @@ const getTransactionById = (req, res) => {
     });
 };
 
-// Controller to update a transaction
+
 const updateTransactionById = (req, res) => {
     const { id } = req.params;
     const { type, category_id, amount, date, description } = req.body;
@@ -52,7 +52,7 @@ const deleteTransactionById = (req, res) => {
     });
 };
 
-// Controller to get a summary of transactions
+
 const getSummary = (req, res) => {
     getSummaryData((err, summary) => {
         if (err) return res.status(500).json({ error: err.message });
